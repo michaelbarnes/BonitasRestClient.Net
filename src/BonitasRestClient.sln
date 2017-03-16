@@ -1,0 +1,33 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BonitasRestClient", "BonitasRestClient\BonitasRestClient.csproj", "{EECE73C8-434B-44EA-8EDB-BBBC68E0A1CA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BonitasRestClient.UnitTests", "BonitasRestClient.UnitTests\BonitasRestClient.UnitTests.csproj", "{EBF3FE87-3AC6-4A89-8521-7C2A20EA62D6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{A67868E3-6C0F-4610-A61A-F25A1F85E2E6}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\packages.config = .nuget\packages.config
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EECE73C8-434B-44EA-8EDB-BBBC68E0A1CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EECE73C8-434B-44EA-8EDB-BBBC68E0A1CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EECE73C8-434B-44EA-8EDB-BBBC68E0A1CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EECE73C8-434B-44EA-8EDB-BBBC68E0A1CA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EBF3FE87-3AC6-4A89-8521-7C2A20EA62D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EBF3FE87-3AC6-4A89-8521-7C2A20EA62D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EBF3FE87-3AC6-4A89-8521-7C2A20EA62D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EBF3FE87-3AC6-4A89-8521-7C2A20EA62D6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
