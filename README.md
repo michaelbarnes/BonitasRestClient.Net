@@ -1,4 +1,4 @@
-# BonitasRestClient.Net
+# BonitasRestClient.Net [![Build status](https://ci.appveyor.com/api/projects/status/hp2wo6a0sqtx54ow?svg=true)]
 
 An abstraction of the Bonita Engine Rest API. 
 In the libraries current state only basic api abstraction was made for the `process` [api](http://documentation.bonitasoft.com/?page=bpm-api#toc27). RestSharp is used for rest api integration and Json.Net used for handling certain json objects.
