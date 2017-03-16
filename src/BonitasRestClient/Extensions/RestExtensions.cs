@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Blazingchilli.Common.Bpm
+namespace BonitasRestClient.Extensions
 {
     public static class RestExtensions
     {

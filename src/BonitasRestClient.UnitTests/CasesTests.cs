@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Should;
+using BonitasRestClient;
 
 namespace Blazingchilli.Common.Bpm.UnitTests
 {
@@ -23,7 +24,7 @@ namespace Blazingchilli.Common.Bpm.UnitTests
         [Test]  
         public void ShouldGetCases()
         {
-            var cases = client.GetCases().Result;
+            var cases = client.GetCases();
             cases.Count.ShouldBeGreaterThan(0);
         }
     }

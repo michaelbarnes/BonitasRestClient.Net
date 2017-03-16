@@ -48,6 +48,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BpmClient.cs" />
+    <Compile Include="Contracts\IAuthorisation.cs" />
     <Compile Include="Contracts\IBpmClient.cs" />
     <Compile Include="Models\Actor.cs" />
     <Compile Include="Models\Case.cs" />
@@ -55,7 +56,7 @@
     <Compile Include="Models\ProcessContraints.cs" />
     <Compile Include="Models\ProcessUpdateFields.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RestExtensions.cs" />
+    <Compile Include="Extensions\RestExtensions.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

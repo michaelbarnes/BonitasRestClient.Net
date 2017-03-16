@@ -1,5 +1,6 @@
 ﻿using BonitasRestClient.Contracts;
 using BonitasRestClient.Models;
+using BonitasRestClient.Extensions;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using RestSharp;
@@ -12,7 +13,7 @@ using System.Threading.Tasks;
 
 namespace BonitasRestClient
 {
-    public class BpmClient : IBpmClient
+    public class BpmClient : IBpmClient, IAuthorisation
     {
         private const string _ApiResource = "bonita/API/bpm";
         private string _BaseUrl;
@@ -59,7 +60,7 @@ namespace BonitasRestClient
             }
         }
 
-        private void Login()
+        public void Login()
         {
             var request = new RestRequest("bonita/loginservice", Method.POST);
             request.AddQueryParameter("username", _Username);
@@ -71,7 +72,7 @@ namespace BonitasRestClient
             _Cookies = response.Cookies;
         }
 
-        private void Logout()
+        public void Logout()
         {
             var request = new RestRequest("bonita/logoutservice", Method.GET);
             request.AddQueryParameter("redirect", "false");
@@ -83,7 +84,7 @@ namespace BonitasRestClient
         /// Get a list of active cases.
         /// </summary>
         /// <returns></returns>
-        public async Task<IList<Case>> GetCases()
+        public async Task<IList<Case>> GetCasesAsync()
         {
             Login();
 
@@ -114,7 +115,7 @@ namespace BonitasRestClient
         /// </summary>
         /// <param name="caseId"></param>
         /// <returns></returns>
-        public async Task<Case> GetCase(string caseId)
+        public async Task<Case> GetCaseAsync(string caseId)
         {
             Login();
 
@@ -144,10 +145,10 @@ namespace BonitasRestClient
         /// Get a list of processes that exist on the Engine
         /// </summary>
         /// <returns></returns>
-        public async Task<IList<Process>> GetProcesses()
+        public async Task<IList<Process>> GetProcessesAsync()
         {
             Login();
-
+            
 
             var request = new RestRequest(_ApiResource + "/process?p=0", Method.GET)
                 .AddCookies(_Cookies)
@@ -176,7 +177,7 @@ namespace BonitasRestClient
         /// </summary>
         /// <param name="processId"></param>
         /// <returns></returns>
-        public async Task<Process> GetProcess(string processId)
+        public async Task<Process> GetProcessAsync(string processId)
         {
             Login();
 
@@ -207,7 +208,7 @@ namespace BonitasRestClient
         /// </summary>
         /// <param name="processId"></param>
         /// <returns></returns>
-        public async Task<ProcessConstraints> GetProcessConstraints(string processId)
+        public async Task<ProcessConstraints> GetProcessConstraintsAsync(string processId)
         {
             Login();
 
@@ -239,7 +240,7 @@ namespace BonitasRestClient
         /// <param name="processId"></param>
         /// <param name="values"></param>
         /// <returns></returns>
-        public async Task ExecuteProcess(string processId, JObject values)
+        public async Task ExecuteProcessAsync(string processId, JObject values)
         {
             Login();
 
@@ -267,7 +268,7 @@ namespace BonitasRestClient
         /// </summary>
         /// <param name="processId"></param>
         /// <returns></returns>
-        public async Task<Process> UpdateProcess(string processId, ProcessUpdateFields fields)
+        public async Task<Process> UpdateProcessAsync(string processId, ProcessUpdateFields fields)
         {
             Login();
 
@@ -294,6 +295,41 @@ namespace BonitasRestClient
             return process;
         }
 
+        public Case GetCase(string caseId)
+        {
+            return GetCaseAsync(caseId).Result;
+        }
+
+        public IList<Case> GetCases()
+        {
+            return GetCasesAsync().Result;
+        }
+
+        public Process GetProcess(string processId)
+        {
+            return GetProcessAsync(processId).Result;
+        }
+
+        public IList<Process> GetProcesses()
+        {
+            return GetProcessesAsync().Result;
+        }
+
+        public void ExecuteProcess(string processId, JObject payload)
+        {
+            ExecuteProcessAsync(processId, payload);
+        }
+
+        public ProcessConstraints GetProcessConstraints(string processId)
+        {
+            return GetProcessConstraintsAsync(processId).Result;
+        }
+
+        public Process UpdateProcess(string processId, ProcessUpdateFields fields)
+        {
+            return UpdateProcessAsync(processId, fields).Result;
+        }
+
         private T HandleResponse<T>(IRestResponse response)
         {
             HandleResponseCode(response);
@@ -313,5 +349,8 @@ namespace BonitasRestClient
             if (response.StatusCode != HttpStatusCode.OK)
                 throw new Exception(string.Format("'{0}' responded with '{1}'.", response.Request.Resource, response.StatusCode), new Exception(response.Content));
         }
+
+
+        
     }
 }
