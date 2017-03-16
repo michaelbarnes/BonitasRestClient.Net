@@ -1,0 +1,10 @@
+version: 105.0.1.{build}
+before_build:
+- nuget restore BonitasRestClient.sln
+branches:
+  only:
+  - master
+skip_tags: true
+build:
+  project: BonitasRestClient.sln
+  verbosity: minimal
