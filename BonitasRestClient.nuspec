@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package>
+  <metadata>
+    <id>$id$</id>
+    <version>$version$</version>
+    <authors>$author$</authors>
+    <owners>$author$</owners>
+    <description>$description$</description>
+    <language>en-US</language>
+    <projectUrl>https://github.com/michaelbarnes/BonitasRestClient.Net</projectUrl>
+    <licenseUrl>https://github.com/michaelbarnes/BonitasRestClient.Net</licenseUrl>
+    <iconUrl></iconUrl>
+    <tags>REST BPM API BONITAS</tags>
+    <releaseNotes><![CDATA[
+            For full release notes see https://github.com/michaelbarnes/BonitasRestClient.Net
+            ]]></releaseNotes>
+  </metadata>
+</package>
