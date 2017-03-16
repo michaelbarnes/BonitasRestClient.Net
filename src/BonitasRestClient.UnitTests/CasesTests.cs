@@ -21,7 +21,8 @@ namespace Blazingchilli.Common.Bpm.UnitTests
             client = new BpmClient("http://10.0.0.132:8080/");
         }
 
-        [Test]  
+        [Test]
+        [Ignore]
         public void ShouldGetCases()
         {
             var cases = client.GetCases();

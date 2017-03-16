@@ -23,6 +23,7 @@ namespace Blazingchilli.Common.Bpm.UnitTests
         }
 
         [Test]
+        [Ignore]
         public void ShouldGetProcesses()
         {
             var processes = client.GetProcesses();
@@ -30,6 +31,7 @@ namespace Blazingchilli.Common.Bpm.UnitTests
         }
 
         [Test]
+        [Ignore]
         public void ShouldGetProcess()
         {
             var processes = client.GetProcesses();
