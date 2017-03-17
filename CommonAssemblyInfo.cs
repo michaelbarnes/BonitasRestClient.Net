@@ -12,8 +12,8 @@ using System.Runtime.InteropServices;
 #else
 [assembly: AssemblyConfiguration("Release")]
 #endif
-[assembly: AssemblyCompany("Blazingchilli")]
-[assembly: AssemblyProduct("Blazingchilli.Common.DB")]
+[assembly: AssemblyCompany("michaelbarnes")]
+[assembly: AssemblyProduct("BonitasRestClient.Net")]
 [assembly: AssemblyCopyright("Copyright © 2015")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
